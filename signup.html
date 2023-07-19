@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Netflix</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New & Popular</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </nav>
+    <input type="text" id="searchInput" placeholder="Search...">
+  </header>
+  
+  <section class="sign-in-section">
+    <h2>Sign In</h2>
+    <form id="signInForm">
+      <input type="text" id="emailInput" placeholder="Email or phone number" required>
+      <input type="password" id="passwordInput" placeholder="Password" required>
+      <p><a href="#">Need help?</a></p>
+      <button type="submit">Sign In</button>
+    </form>
+    <p>New to Netflix? <a href="#">Sign up now</a>.</p>
+    <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more</a>.</p>
+  </section>
+  
+  <footer>
+    <section class="contact-section">
+      <div class="contact-content">
+        <h2>Questions? Contact us.</h2>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Media Center</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Ways to Watch</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Speed Test</a></li>
+          <li><a href="#">Legal Notices</a></li>
+          <li><a href="#">Only on Netflix</a></li>
+        </ul>
+        <div class="country">Netflix Pakistan</div>
+      </div>
+    </section>
+    <section class="language-section">
+      <div class="language-content">
+        <div class="language">English</div>
+      </div>
+    </section>
+  </footer>
+
+  <script>
+    // Handle sign-in form submission
+    function handleSignIn(event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById('emailInput').value;
+      const passwordInput = document.getElementById('passwordInput').value;
+
+      // Perform sign-in action with the entered email and password
+      console.log('Email:', emailInput);
+      console.log('Password:', passwordInput);
+
+      // Reset the form
+      event.target.reset();
+    }
+
+    // Example code to handle the search input
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        const searchQuery = searchInput.value;
+        // Perform search or any other action based on the search query
+        console.log('Searching for:', searchQuery);
+      }
+    });
+
+    // Example code to handle the Sign Up button click
+    const signUpButton = document.getElementById('signUpButton');
+    signUpButton.addEventListener('click', function() {
+      // Perform action when the Sign Up button is clicked
+      console.log('Sign Up clicked');
+    });
+
+    // Example code to handle the Get Started button click
+    const getStartedButton = document.querySelector('.laptop-content button');
+    getStartedButton.addEventListener('click', function() {
+      const emailInput = prompt('Please enter your email:');
+      // Perform action with the email input, such as creating or restarting membership
+      console.log('Email:', emailInput);
+    });
+  </script>
+  <style>
+    body {
+      background-color: #141414;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .sign-in-section {
+      background-color: #000;
+      color: #fff;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .sign-in-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #signInForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #signInForm input[type="text"],
+    #signInForm input[type="password"] {
+      width: 300px;
+      height: 40px;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+
+    #signInForm p {
+      margin-bottom: 20px;
+    }
+
+    #signInForm a {
+      color: #b3b3b3;
+      text-decoration: none;
+    }
+
+    #signInForm button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    footer ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .country {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .language-section {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .language-content {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .language {
+      font-size: 16px;
+    }
+  </style>
+</body>
+</html>

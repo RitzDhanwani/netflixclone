@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Netflix</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New & Popular</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </nav>
+    <input type="text" id="searchInput" placeholder="Search...">
+  </header>
+  
+  <section class="hero-banner">
+    <h1>Welcome to Netflix</h1>
+    <p>Watch your favorite movies and TV shows anytime, anywhere.</p>
+    <button id="signUpButton">Sign Up</button>
+  </section>
+  
+  <section class="laptop-section">
+    <div class="laptop-image"></div>
+    <div class="laptop-content">
+      <h2>Enjoy on your TV</h2>
+      <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+      <button>Get Started</button>
+    </div>
+  </section>
+  
+  <section class="mobile-section">
+    <div class="mobile-content">
+      <h2>Download your shows to watch offline</h2>
+      <p>Save your favorites easily and always have something to watch.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="mobile-image"></div>
+  </section>
+  
+  <section class="watch-everywhere-section">
+    <div class="watch-everywhere-content">
+      <h2>Watch everywhere</h2>
+      <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+      <button>Start Watching</button>
+    </div>
+  </section>
+  
+  <section class="create-profiles-section">
+    <div class="create-profiles-content">
+      <div class="create-profiles-text">
+        <h2>Create profiles for kids</h2>
+        <p>Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
+      </div>
+      <div class="create-profiles-image"></div>
+    </div>
+  </section>
+  
+  <section class="faq-section">
+    <div class="faq-content">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-questions">
+        <div class="faq-question">
+          <h3>What is Netflix?</h3>
+          <div class="faq-answer">
+            <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+          </div>
+          <div class="faq-button">+</div>
+        </div>
+        <div class="faq-question">
+          <h3>How much does Netflix cost?</h3>
+          <div class="faq-answer">
+            <p>Netflix offers several membership plans starting at $8.99 per month. The cost may vary based on your country and the plan you choose.</p>
+          </div>
+          <div class="faq-button">+</div>
+        </div>
+        <div class="faq-question">
+          <h3>Where can I watch?</h3>
+          <div class="faq-answer">
+            <p>You can watch Netflix on your TV, computer, mobile phone, tablet, or gaming console. You can also stream on multiple devices at the same time.</p>
+          </div>
+          <div class="faq-button">+</div>
+        </div>
+        <div class="faq-question">
+          <h3>How do I cancel?</h3>
+          <div class="faq-answer">
+            <p>You can cancel your Netflix membership at any time. Simply go to your Account settings and select the cancel option.</p>
+          </div>
+          <div class="faq-button">+</div>
+        </div>
+        <div class="faq-question">
+          <h3>What can I watch on Netflix?</h3>
+          <div class="faq-answer">
+            <p>Netflix offers a wide range of content, including TV shows, movies, documentaries, and original series. You can explore different genres and find something for every taste.</p>
+          </div>
+          <div class="faq-button">+</div>
+        </div>
+        <div class="faq-question">
+          <h3>Is Netflix good for kids?</h3>
+          <div class="faq-answer">
+            <p>Netflix provides a dedicated kids' section with a selection of age-appropriate shows and movies. Parents can create profiles for their kids and customize the viewing experience.</p>
+          </div>
+          <div class="faq-button">+</div>
+        </div>
+        <!-- Add more questions and answers here -->
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <section class="contact-section">
+      <div class="contact-content">
+        <h2>Questions? Contact us.</h2>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Media Center</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Ways to Watch</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Speed Test</a></li>
+          <li><a href="#">Legal Notices</a></li>
+          <li><a href="#">Only on Netflix</a></li>
+        </ul>
+        <div class="country">Netflix Pakistan</div>
+      </div>
+    </section>
+    <section class="language-section">
+      <div class="language-content">
+        <div class="language">English</div>
+      </div>
+    </section>
+  </footer>
+
+  <script>
+    //------------------------------------------------------------
+    // Get all the question elements
+    const questions = document.querySelectorAll('.faq-question');
+  
+    // Add click event listeners to each question
+    questions.forEach((question) => {
+      const answer = question.querySelector('.faq-answer');
+      const button = question.querySelector('.faq-button');
+  
+      // Toggle the display of the corresponding answer when the button is clicked
+      button.addEventListener('click', () => {
+        answer.classList.toggle('show-answer');
+        button.textContent = button.textContent === '+' ? '-' : '+';
+      });
+    });
+  
+    
+    // Example code to handle the search input
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        const searchQuery = searchInput.value;
+        // Perform search or any other action based on the search query
+        console.log('Searching for:', searchQuery);
+      }
+    });
+  
+    // Example code to handle the Sign Up button click
+    const signUpButton = document.getElementById('signUpButton');
+    signUpButton.addEventListener('click', handleSignUp);
+  
+    // Example code to handle the Get Started button click
+    const getStartedButton = document.querySelector('.laptop-content button');
+    getStartedButton.addEventListener('click', function() {
+      const emailInput = prompt('Please enter your email:');
+      // Perform action with the email input, such as creating or restarting membership
+      console.log('Email:', emailInput);
+    });
+  
+    function handleSignUp() {
+      // Redirect to the sign-up page
+      window.location.href = "signup.html";
+    }
+  </script>
+
+
+  <style>
+
+
+.faq-question {
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      display: none;
+    }
+
+    .faq-button {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #ccc;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .show-answer {
+      display: block !important;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hero-banner {
+      background-image: url('https://cdn.wallpapersafari.com/24/74/zgeTuV.jpg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 0;
+      color: #fff;
+    }
+
+    .hero-banner h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero-banner p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .hero-banner button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .laptop-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background-color: #000;
+      border: 3px solid rgb(156, 156, 156);
+    }
+
+    .laptop-image {
+      width: 400px;
+      height: 250px;
+      background-image: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .laptop-content {
+      margin-left: 40px;
+      text-align: center;
+      color: beige;
+      background-color: #000;
+    }
+
+    .laptop-content h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      background-color: #000;
+    }
+
+    .laptop-content p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      background-color: #000;
+    }
+
+    .laptop-content button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .mobile-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background-color: #030303;
+      color: #fff;
+      border: 3px solid rgb(156, 156, 156);
+    }
+
+    .mobile-image {
+      width: 400px;
+      height: 250px;
+      background-image: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mobile-content {
+      margin-right: 40px;
+      text-align: center;
+    }
+
+    .mobile-content h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .mobile-content p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .mobile-content button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .watch-everywhere-section {
+      background-color: #000;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      border: 3px solid rgb(156, 156, 156);
+
+    }
+
+    .watch-everywhere-content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .watch-everywhere-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .watch-everywhere-content button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .create-profiles-section {
+      background-color: #000;
+      color: #fff;
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid rgb(156, 156, 156);
+    }
+
+    .create-profiles-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .create-profiles-text {
+      flex: 1;
+    }
+
+    .create-profiles-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .create-profiles-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .create-profiles-image {
+      flex: 1;
+      height: 400px;
+      background-image: url('https://occ-0-1917-58.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .faq-section {
+      background-color: #000;
+      color: #fff;
+      padding: 100px 0;
+      border: 3px solid rgb(156, 156, 156);
+    }
+
+    .faq-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .faq-questions {
+      margin-bottom: 50px;
+    }
+
+    .faq-question {
+      margin-bottom: 30px;
+    }
+
+    .faq-question h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .faq-question p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      border: 3px solid white;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    footer ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer p {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .contact-section {
+      background-color: #000;
+      color: #fff;
+      padding: 50px 0;
+    }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-content h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-content ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-content ul li {
+      margin-right: 10px;
+    }
+
+    .contact-content ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .country {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .language-section {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .language-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .language {
+      font-size: 16px;
+    }
+
+/* media queries  */
+
+    /* Add responsive styles here */
+
+    /* Adjust header styles for smaller screens */
+    @media (max-width: 600px) {
+      header {
+        padding: 10px 5px;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+        flex-basis: 100%;
+      }
+    }
+
+    /* Adjust hero-banner styles for smaller screens */
+    @media (max-width: 600px) {
+      .hero-banner {
+        padding: 50px 20px;
+      }
+
+      .hero-banner h1 {
+        font-size: 24px;
+      }
+
+      .hero-banner p {
+        font-size: 16px;
+      }
+
+      .hero-banner button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+
+    /* Adjust laptop-section styles for smaller screens */
+    @media (max-width: 600px) {
+      .laptop-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+      }
+
+      .laptop-image {
+        width: 250px;
+        height: 150px;
+      }
+
+      .laptop-content {
+        margin: 20px 0;
+      }
+    }
+
+    /* Adjust mobile-section styles for smaller screens */
+    @media (max-width: 600px) {
+      .mobile-section {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 30px;
+      }
+
+      .mobile-image {
+        width: 250px;
+        height: 150px;
+      }
+
+      .mobile-content {
+        margin: 20px 0;
+      }
+    }
+
+    /* Adjust watch-everywhere-section styles for smaller screens */
+    @media (max-width: 600px) {
+      .watch-everywhere-section {
+        padding: 50px 20px;
+      }
+
+      .watch-everywhere-content h2 {
+        font-size: 24px;
+      }
+
+      .watch-everywhere-content p {
+        font-size: 16px;
+      }
+
+      .watch-everywhere-content button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+
+    /* Adjust create-profiles-section styles for smaller screens */
+    @media (max-width: 600px) {
+      .create-profiles-section {
+        padding: 50px 20px;
+      }
+
+      .create-profiles-image {
+        height: 250px;
+      }
+
+      .create-profiles-text h2 {
+        font-size: 24px;
+      }
+
+      .create-profiles-text p {
+        font-size: 16px;
+      }
+    }
+
+    /* Adjust faq-section styles for smaller screens */
+    @media (max-width: 600px) {
+      .faq-content {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+
+      .faq-content h2 {
+        font-size: 24px;
+      }
+
+      .faq-question h3 {
+        font-size: 20px;
+      }
+
+      .faq-question p {
+        font-size: 14px;
+      }
+    }
+
+    /* Adjust contact-section styles for smaller screens */
+    @media (max-width: 600px) {
+      .contact-content {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+
+      .contact-content h2 {
+        font-size: 20px;
+      }
+
+      .contact-content ul li a {
+        font-size: 12px;
+      }
+
+      .country {
+        font-size: 12px;
+      }
+    }
+
+    /* Adjust language-section styles for smaller screens */
+    @media (max-width: 600px) {
+      .language {
+        font-size: 12px;
+      }
+    }
+
+
+  </style>
+</body>
+</html>
